@@ -1,0 +1,46 @@
+{% extends 'rango/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Menu{% endblock %}
+
+        {% block body_block %}
+
+
+    <head>
+        <title>Bares</title>
+    </head>
+
+    <body>
+        {% if bares %}
+        <h1>{{ bares_name }}</h1>
+        <div class="row placeholders">
+            <div class="col-xs-12 col-sm-6 placeholder">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading">
+            <h3 class="panel-title">Tapas</h3>
+                      </div>
+            </div>
+            {% if tapas %}
+           <ul class="list-group"> 
+                {% for tapa in tapas %}
+                <li class="list-group-item"> {{tapa.nombre}} </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <strong>No hay tapas  en este bar</strong>
+            {% endif %}
+        {% else %}
+            No hay tapas para este bar {{bares_nombre }}
+        {% endif %}
+        <li> Numero de visitas: {{bares.visitas}} </li>
+        <a href="/bares">Inicio</a>
+        <h3 class="panel-title">Localización</h3>
+        {% load easy_maps_tags %}
+        {% easy_map bares.direccion 300 400 %}
+        {% load easy_maps_tags cache %}
+        {% cache 600 my_map firm.address %}
+        {% easy_map firm.address 300 400 %}
+        {% endcache %}  
+    </body>
+        {% endblock %}

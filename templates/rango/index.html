@@ -1,0 +1,61 @@
+{% extends 'rango/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Menu{% endblock %}
+
+        {% block body_block %}
+{% if user.is_authenticated %}
+    <div class="page-header">
+
+                <h1>Bienvenidos al mundo de los bares {{ user.username }}!</h1>
+            {% else %}
+                <h1>Bienvenidos al mundo de los bares </h1>
+            {% endif %}
+</div>
+
+         <div class="row placeholders">
+            <div class="col-xs-12 col-sm-6 placeholder">
+                  <div class="panel panel-primary">
+                      <div class="panel-heading">
+            <h3 class="panel-title">Bares</h3>
+                      </div>
+            </div>
+            {% if bares %}
+              <ul class="list-group"> 
+                {% for bar in bares %}
+                <li class="list-group-item"> <span class="badge"> {{bar.visitas}} </span> <a href="/bares/{{bar.nombre}}"> {{ bar.nombre }}</a> </li>
+                {% endfor %}
+            </ul>
+
+        {% else %}
+            <strong>No hay bares disponibles.</strong>
+        {% endif %}
+            </div>
+          </div>
+            <div class="row placeholders">
+              <div class="col-xs-12 col-sm-6 placeholder">
+                <div class="panel panel-primary">
+                  <div class="panel-heading">
+            <h3 class="panel-title">Tapas</h3>  
+              </div>
+            </div>
+
+                {% if tapas %}
+                    <ul class="list-group"> 
+                        {% for tapa in tapas %}
+                         <li class="list-group-item"><a href="{{tapa.bar}}">{{ tapa.nombre }}</a></li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <strong>No hay tapas</strong>
+                {% endif %}
+            </div>
+
+          </div>
+          {% if user.is_authenticated %}
+            <a href="/bares/new_tapa/">Añadir nueva tapa</a><br />
+          {% endif %}
+             <script src="http://code.highcharts.com/highcharts.js"></script>
+          <div id="container" style="height: 300px"></div>
+        {% endblock %}

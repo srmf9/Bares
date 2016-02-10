@@ -27,6 +27,16 @@ Y también deberé crear un fichero llamado runtime.txt para indicarle a Heroku 
 
 python-2.7.10  
 
+Para conseguir que me funcione bootstrap he tenido que en settings.py añadir la siguiente línea para que me coja las imagenes del static:     
+``STATICFILES_STORAGE = whitenoise.django.GzipManifestStaticFilesStorage'
+``  
+Tambien en el archivo  wsgi.py he añadido las siguientes líneas:  
+```
+from whitenoise.django import DjangoWhiteNoise
+
+application = get_wsgi_application()
+application = DjangoWhiteNoise(application)
+```
 Una vez que realizamos estos pasos procedo a subir la aplicación a [GitHub](https://github.com/srmf9/Bares.git)
  
  Ahora procemos a subirla a Heroku para ello me situo en el directorio raiz de la aplicación y introduzco las siguientes ordenes:    

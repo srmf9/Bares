@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'e97^lf7ts1+rl)k)32ik6pg&2svskl_06x0js*f(daq_los-0b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -112,6 +112,7 @@ LOGIN_URL='/accounts/login/'  # The page users are directed to if they are not l
 
 STATIC_PATH = os.path.join(BASE_DIR,'static')
 STATIC_URL = '/static/'
+STATIC_ROOT= 'staticfiles'
 STATICFILES_DIRS = (
     STATIC_PATH,
 )

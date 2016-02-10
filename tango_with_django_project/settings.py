@@ -116,3 +116,5 @@ STATIC_ROOT= 'staticfiles'
 STATICFILES_DIRS = (
     STATIC_PATH,
 )
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'

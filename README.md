@@ -1,6 +1,5 @@
-[![Build Status](https://snap-ci.com/srmf9/Proyecto-IV/branch/master/build_image)](https://snap-ci.com/srmf9/Proyecto-IV/branch/master) [![Heroku](https://www.herokucdn.com/deploy/button.png)](http://bares-dai.herokuapp.com/)
-[![Azure](http://azuredeploy.net/deploybutton.png)](http://dai-bares.herokuapp.com/)
-   
+[![Build Status](https://snap-ci.com/srmf9/Proyecto-IV/branch/master/build_image)](https://snap-ci.com/srmf9/Proyecto-IV/branch/master) [![Heroku](https://www.herokucdn.com/deploy/button.png)](http://dai-bares.herokuapp.com/)
+
 # Bares DAI
 
 ##Práctica 7. Puesta en producción.
@@ -59,7 +58,7 @@ Recordar tener activado la opción wait for CI  to pass before  deploy en Heroku
 Ya tenemos la integración continua que se pasará siempre que realizemos un push:  
 ![foto](http://i1028.photobucket.com/albums/y349/Salva_Rueda/Captura%20de%20pantalla%20de%202015-11-30%20014357_zpsy9ftmkcr.png)  
 
-Por último comentar que me fue muy util a la hora de encontrar un fallo en mi aplicacón consultar los logs que nos devuelve Heroku. Se consulta de la siguiente forma:  
+Por último comentar que me fue muy util a la hora de encontrar un fallo en mi aplicación consultar los logs que nos devuelve Heroku. Se consulta de la siguiente forma:  
  
  heroku logs --app encuesta > log.txt
   

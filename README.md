@@ -27,7 +27,7 @@ Y también deberé crear un fichero llamado runtime.txt para indicarle a Heroku 
 
 python-2.7.10  
 
-Para conseguir que me funcione bootstrap he tenido que en settings.py añadir la siguiente línea para que me coja las imagenes del static:     
+Para conseguir que me funcione bootstrap he tenido que añadir en el archivo settings.py  la siguiente línea para que me coja las imagenes del static:     
 ``STATICFILES_STORAGE = whitenoise.django.GzipManifestStaticFilesStorage'
 ``  
 Tambien en el archivo  wsgi.py he añadido las siguientes líneas:  

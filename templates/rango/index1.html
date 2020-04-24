@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bares</title>
+    </head>
+
+    <body>
+        <h1>Bienvenido al listado de bares</h1>
+
+        {% if bares %}
+            <ul>
+                {% for bar in bares %}
+                <li><a href="/bares/bares/{{bar.nombre}}"> {{ bar.nombre }}</a></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>No hay bares disponibles.</strong>
+        {% endif %}
+
+        <a href="/bares/about/">About</a>
+    </body>
+</html>
